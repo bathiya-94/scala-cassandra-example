@@ -32,8 +32,5 @@ object Main {
     println(s"Retrieved user: ${user3.toString}")
 
 
-
-
-
   }
 }

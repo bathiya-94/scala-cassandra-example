@@ -13,6 +13,6 @@ trait CassandraConfig  {
   lazy val cassandraUsername: String = cassandraConf.getString("cassandra.username")
   lazy val cassandraPassword: String = cassandraConf.getString("cassandra.password")
 
-  lazy val userKeyspace = cassandraConf.getString("cassandra.userKeyspace")
+  lazy val userKeyspace: String = cassandraConf.getString("cassandra.userKeyspace")
 
 }

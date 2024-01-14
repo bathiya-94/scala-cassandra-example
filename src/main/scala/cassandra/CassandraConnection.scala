@@ -1,6 +1,6 @@
 package cassandra
 
-import com.datastax.driver.core.Cluster
+import com.datastax.driver.core.{Cluster, Session}
 import config.CassandraConfig
 
 trait CassandraConnection extends CassandraConfig {
@@ -11,6 +11,6 @@ trait CassandraConnection extends CassandraConfig {
     .withoutMetrics()
     .build()
 
-  lazy val session = cluster.connect(userKeyspace)
+  lazy val session: Session = cluster.connect(userKeyspace)
 
 }

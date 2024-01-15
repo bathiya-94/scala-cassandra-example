@@ -1,4 +1,4 @@
-import manager.UserManager
+import manager.UserMapper
 import model.User
 
 import java.util.UUID
@@ -13,7 +13,7 @@ object Main {
 
     val user2 = new User(uuid2, "xyz", 5)
 
-    val userManager = new UserManager
+    val userManager = new UserMapper
 
     // Create
     userManager.save(user1)

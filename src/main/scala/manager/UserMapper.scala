@@ -6,20 +6,19 @@ import model.User
 
 import java.util.UUID
 
-class UserManager extends CassandraConnection {
+class UserMapper extends CassandraConnection {
 
-  private lazy val manager = new MappingManager(session).mapper(classOf[User])
+  private lazy val mapper = new MappingManager(session).mapper(classOf[User])
 
   def save(user: User): Unit = {
-    manager.save(user)
+    mapper.save(user)
   }
 
   def findById(id: UUID): User = {
-    manager.get(id)
+    mapper.get(id)
   }
 
   def removeById(user: User): Unit = {
-    manager.delete(user)
+    mapper.delete(user)
   }
-
 }
